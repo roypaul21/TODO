@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    padding: 0px 70px 0px 70px;
+}
+
+.btn {
+    padding: 7px 40px 7px 40px !important;
+}
