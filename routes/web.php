@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ HomeController::class,'index']);
 
 /*LOGIN REQUEST POST*/
-Route::post('/login', [HomeController::class,'loginPost'])->name('login.post');
+
 
 /*REGISTER REQUEST POST*/
-Route::post('/register', [HomeController::class,'registerPost'])->name('register.post');
+Route::post('/register', [AuthController::class,'registerPost'])->name('register');
 

@@ -2,23 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Users;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
     function registerPost(Request $request) {
+        $user = new Users();
+
         $username = $request->username;
         $email = $request->email;
         $pwd = $request->pwd;
         $confirmPwd = $request->confirm_pwd;
+
+        if ($pwd !== $confirmPwd) {
+            return back()->withInput()->withErrors(['confirm_pwd' => 'Password and confirm password do not match']);
+        }
+
+        $user->username = $username;
+        $user->user_email = $email;
+        $user->user_pwd = Hash::make($pwd);
+
+        $user->save();
+
+
+        return back()->with('success', 'Register Successfully');
     }
+
 
     function loginPost(Request $request) {
         $email = $request->email;
         $pwd = $request->pwd;
-
-        Log::info("Username: $email");
-        Log::info("Username: $pwd");
     }
 }

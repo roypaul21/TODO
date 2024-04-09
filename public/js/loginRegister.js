@@ -28,3 +28,7 @@ function showForm(formType) {
         registerTab.style.display = "flex";
     }
 }
+
+function registerForm(event) {
+    event.preventDefault();
+}
