@@ -17,17 +17,17 @@ class AuthController extends Controller
         $confirmPwd = $request->confirm_pwd;
 
         if ($pwd !== $confirmPwd) {
-            return back()->withInput()->withErrors(['confirm_pwd' => 'Password and confirm password do not match']);
+            return back()->withInput()->withErrors(['error' => 'Password and confirm password do not match']);
         }
 
-        $user->username = $username;
-        $user->user_email = $email;
-        $user->user_pwd = Hash::make($pwd);
+        #$user->username = $username;
+        #$user->user_email = $email;
+        #$user->user_pwd = Hash::make($pwd);
 
-        $user->save();
+        #$user->save();
 
 
-        return back()->with('success', 'Register Successfully');
+        return back()->with('success', 'User Register Successfully!');
     }
 
 

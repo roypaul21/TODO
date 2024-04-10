@@ -121,6 +121,30 @@ body {
     font-size: medium;
 }
 
+/*ALERT MESSAGE*/
+
+.alert-msg {
+    width: 100%;
+    height: fit-content;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    z-index: 5;
+}
+
+.alert-msg > p {
+    background-color: var(--color1);
+    width: fit-content;
+    padding: 10px;
+}
+
+.alert-msg > button {
+    height: fit-content;
+    padding: 10px;
+    border-width: 0;
+    background-color: var(--color1);
+}
+
 
 
 

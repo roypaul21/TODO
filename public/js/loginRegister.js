@@ -18,17 +18,18 @@ function showForm(formType) {
     if (formType === "login") {
         loginBtn.style.backgroundColor = "White";
         loginBtn.style.color = "#545454";
-
         loginTab.style.display = "flex";
 
     } else if (formType === "register") {
         registerBtn.style.backgroundColor = "White";
         registerBtn.style.color = "#545454";
-
         registerTab.style.display = "flex";
     }
 }
 
-function registerForm(event) {
-    event.preventDefault();
+function closeMsg() {
+    var alertMsg = document.getElementById('alert-msg');
+
+        // Hide the alert-msg element
+    alertMsg.style.display = 'none';
 }

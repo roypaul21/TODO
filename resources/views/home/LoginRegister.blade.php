@@ -10,14 +10,7 @@
         </div>
 
         <div class="modal-body">
-            @if (Session::has('success'))
-                <div class="alert alert-success" role="alert">
-                    {{Session::get('success')}}
-                </div>
-            @endif
-
             <form class="login-modal-form" action="" method="POST">
-                @csrf
                 <div class="modal--input">
                     <label>Email</label>
                     <input type="text" name="email" required/>
@@ -31,8 +24,8 @@
                 </div>
             </form>
 
-            <form class="register-modal-form">
-                @csrf
+            <form class="register-modal-form" enctype="multipart/form-data" method="POST" action="{{route('register')}}">
+                {{ csrf_field() }}
                 <div class="modal--input">
                     <label>Username</label>
                     <input type="text" name="username" required/>
@@ -50,7 +43,7 @@
                     <input type="password" name="confirm_pwd" required/>
                 </div>
                 <div class="modal--btn">
-                    <button onclick="registerForm(event)">Sign Up</button>
+                    <button type="submit">Sign Up</button>
                 </div>
             </form>
         </div>

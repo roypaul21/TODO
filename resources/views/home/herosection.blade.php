@@ -12,6 +12,7 @@
     @extends("layouts.default_layout")
 
     @section("content")
+
     <section class="hero-section">
         <div class="hero-section-header">
             <h1>Streamlining Your Simple To-Do List Management Experience.</h1>
