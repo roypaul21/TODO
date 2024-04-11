@@ -130,19 +130,31 @@ body {
     display: flex;
     justify-content: center;
     z-index: 5;
+    transition: 1s linear;
 }
 
 .alert-msg > p {
     background-color: var(--color1);
     width: fit-content;
     padding: 10px;
+    color: var(--color2);
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-bottom-left-radius: 5px;
 }
 
 .alert-msg > button {
-    height: fit-content;
+    height: 100%;
     padding: 10px;
+    font-size: 18px;
     border-width: 0;
     background-color: var(--color1);
+    color: red;
+    border-bottom-right-radius: 5px;
+}
+
+.input-error {
+    color: red;
 }
 
 

@@ -11,14 +11,18 @@ class AuthController extends Controller
     function registerPost(Request $request) {
         $user = new Users();
 
+        $request->validate([
+            'username' => 'required',
+            'email' => 'required|email',
+            'pwd' => 'required|min:6',
+            'confirm_pwd' => 'required|same:pwd',
+        ]);
+
         $username = $request->username;
         $email = $request->email;
         $pwd = $request->pwd;
         $confirmPwd = $request->confirm_pwd;
 
-        if ($pwd !== $confirmPwd) {
-            return back()->withInput()->withErrors(['error' => 'Password and confirm password do not match']);
-        }
 
         #$user->username = $username;
         #$user->user_email = $email;

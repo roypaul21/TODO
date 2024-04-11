@@ -29,7 +29,5 @@ function showForm(formType) {
 
 function closeMsg() {
     var alertMsg = document.getElementById('alert-msg');
-
-        // Hide the alert-msg element
     alertMsg.style.display = 'none';
 }
